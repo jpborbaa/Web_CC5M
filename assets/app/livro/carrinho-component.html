@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="../../../public/stylesheets/carrinho.css">
+</head>
+
+<body>
+  <!-- <header>
+    <div class="container">
+      <h1>Shopping Cart</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header> -->
+
+  <main>
+    <div class="container">
+      <h2>Your Cart</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of Data">
+            <td>
+              <div class="product">
+                <img [src]="item.livro.imagePath" alt="Book">
+                <div class="product-details">
+                  <h3>{{ item.livro.title }}</h3>
+                  <p>{{ item.livro.description }}</p>
+                  <button (click)='deleteCarrinho(item._id)'>Remove</button>
+                </div>
+              </div>
+            </td>
+            <td>${{ item.livro.price }}</td>
+            <td>${{ item.livro.price }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">Total:</td>
+            <td class="Total">${{this.preco}}</td>
+          </tr>
+        </tfoot>
+      </table>
+      <button class="checkout" >Checkout</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Book Shopping Online Store</p>
+    </div>
+  </footer>
+</body>
+
+</html>

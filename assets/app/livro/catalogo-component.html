@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Shopping Online Store</title>
+	<link rel="stylesheet" href="../../../public/stylesheets/livro.css">
+</head>
+<body> 
+	<section>
+		<h2><strong>Livraria Rosalivros</strong></h2>
+
+		<ul class="books" *ngFor="let livro of Data">
+			<li>
+				<img [src]="livro.imagePath">
+				<h3>{{ livro.title }}</h3>
+				<p>{{ livro.description }}</p>
+				<td>${{ livro.price }}</td>
+				
+				<button (click)='AddtoCart(livro._id)' type="submit">Add to Cart</button>
+			</li>
+		</ul>
+	</section>
+
+	<footer>
+		<p>&copy; 2023 Livraria Rosalivros.</p>
+	</footer>
+</body>
+</html>
+
